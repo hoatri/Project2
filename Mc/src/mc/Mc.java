@@ -12,6 +12,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -24,11 +25,11 @@ public class Mc extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        AnchorPane root =FXMLLoader.load(getClass().getResource("Login.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Mc");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        Navigator.getInstance().setStage(primaryStage);
+        Navigator.getInstance().getStage().getIcons().add(new Image("Image/arches-logo_108x108.jpg"));
+        Navigator.getInstance().getStage().setTitle("Mc");
+        Navigator.getInstance().gotoLogin();
+        Navigator.getInstance().getStage().show();
     }
 
     /**

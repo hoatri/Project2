@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mc;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
+import database.AdminSession;
 import database.Admin_query;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.security.MessageDigest;
@@ -26,10 +23,6 @@ import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javax.xml.bind.DatatypeConverter;
 
-/**
- *
- * @author Valan
- */
 public class LoginController implements Initializable{
     @FXML
     private Text txtCustomer1;
@@ -136,40 +129,39 @@ public class LoginController implements Initializable{
         return loginEmail.validate() && loginPass.validate();
     }
     
-    void Login() throws NoSuchAlgorithmException {
+    void Login() throws NoSuchAlgorithmException, IOException {
         if (validateInfo()) {
             String email = loginEmail.getText();
             String password = sha1(loginPass.getText());
-            if (txtAdmin.visibleProperty().getValue()==true&& Admin_query.authenticateAdmin(email, password)) {
-//                AdminSession.getInstance().setEmail(email);
-//                Navigator.getInstance().gotoProductIndex();
-                
-            }else if(txtCustomer.visibleProperty().getValue()==true){
-                
+            if (txtAdmin.visibleProperty().getValue()==true && Admin_query.authenticateAdmin(email, password)) {
+                AdminSession.getInstance().setEmail(email);
+                Navigator.getInstance().gotoAdmin();
+//                loginError.setVisible(true);
+//                loginError.setText("true ad");
+            }else if(txtCustomer.visibleProperty().getValue()==true && Admin_query.authenticateAdmin(email, password)){
+                AdminSession.getInstance().setEmail(email);
+                Navigator.getInstance().gotoAdmin();
             }
             else {
-//                loginError.setVisible(true);
-                loginError.setText("fail");
+                loginError.setVisible(true);
             }
         }
     }
     
     @FXML
-    void Login(MouseEvent event) throws NoSuchAlgorithmException {
+    void Login(MouseEvent event) throws NoSuchAlgorithmException, IOException {
         Login();
     }
     
     @FXML
-    void onEnterPressed(KeyEvent event) throws NoSuchAlgorithmException {
+    void onEnterPressed(KeyEvent event) throws NoSuchAlgorithmException, IOException {
         if ((txtCustomer.visibleProperty().getValue()==true || txtAdmin.visibleProperty().getValue()==true) && event.getCode() == KeyCode.ENTER) {
             Login();
-        }else{
-            loginError.setText("sign up");
         }
     }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+        loginError.setVisible(false);
     }
 }
