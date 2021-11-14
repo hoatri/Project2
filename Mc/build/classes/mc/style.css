@@ -1,0 +1,120 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 11, 2020, 7:15:46 PM
+    Author     : Admin
+*/
+
+.background-white {
+    -fx-background-color: white;
+}
+
+.sidebar {
+    -fx-background-color: #b83e3e;
+}
+
+.btn-danger {
+    -fx-background-color: #c13d36;
+    -fx-text-fill: white;
+}
+.btn-success {
+    -fx-background-color: #1DB954;
+    -fx-text-fill: white;
+}
+.btn-primary {
+    -fx-background-color: lightskyblue;
+    -fx-text-fill: white;
+}
+.btn-info {
+    -fx-background-color:  #1a7499;
+    -fx-text-fill: white;
+}
+.hover-hand, .btn-danger, .btn-success, .btn-primary, .btn-info{
+    -fx-cursor: hand;
+}
+.btn-danger:hover, .btn-success:hover, .btn-primary:hover, .btn-info:hover {
+    -jfx-button-type: FLAT;
+}
+.product-box {
+    -fx-spacing: 20;
+    -fx-padding: 0 0 0 10;
+}
+.productName {
+    -fx-font-size: 17;
+    -fx-text-fill:#5d5d5d;
+}
+.productName:hover {
+    -fx-text-fill:#6ac2ee;
+}
+.price {
+    -fx-font-size: 13;
+    -fx-text-fill:#3b71b8;
+}
+.gpProductsList{
+    -fx-vgap: 30;
+    -fx-hgap: 10;
+}
+.categoryName{
+    -fx-font-size: 15;
+    -fx-font-weight: 700;
+}
+.categoryName:hover{
+    -fx-text-fill:#6ac2ee;
+}
+.hover-shadow:hover, .shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0,0,0);
+}
+.cart-cell {
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: #eee;
+    -fx-font-size: 15;
+    -fx-padding: 0 0 0 20;
+}
+.txt-grey {
+    -fx-text-fill: #747474;    
+}
+.txt-white {
+    -fx-text-fill: white;    
+}
+.txt-ocean-blue {
+    -fx-text-fill: #3B71B4;
+}
+.txt-bold {
+    -fx-font-weight: bold;
+}
+.txt-medium {
+    -fx-font-size: 15;
+}
+.table-view .column-header {
+    -fx-background-color: #6ac2ee;
+}
+.table-view .column-header .label{
+    -fx-text-fill: white;
+}
+.titled-pane > .title {
+    -fx-background-color: #eee;
+}
+.tree-cell{
+    -fx-font-size: 15;
+    -fx-text-fill: #747474;
+}
+.tree-cell:selected { 
+    -fx-background-color: #6ac2ee; 
+}
+.tree-cell .selection-bar { 
+    -fx-background-color: none; 
+}
+.tree-cell:hover { 
+    -fx-background-color: #6ac2ee; 
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+.tree-cell > .tree-disclosure-node > .arrow  {
+    -fx-background-color: #747474;
+}
+.p-10 {
+    -fx-padding: 10 10 10 10;
+}

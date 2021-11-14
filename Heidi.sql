@@ -54,9 +54,16 @@ create table orderDetail(
 	price FLOAT,
 	foreign key (orderID) REFERENCES `order`(orderID),
 	foreign key (productID) REFERENCES `product`(productID)
-)admin
+)
 
 create table status(
 	ID int primary key auto_increment,
 	status varchar(20) not null
 )
+
+INSERT INTO status(status)
+VALUES("Pending"),
+("Confirmed"),
+("Cancelled"),
+("Enabled"),
+("Disable")

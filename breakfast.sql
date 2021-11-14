@@ -63,3 +63,10 @@ create table [status](
 	ID int primary key identity(1,1),
 	[status] varchar(20) not null
 )
+
+INSERT INTO status([status])
+VALUES('Pending'),
+('Confirmed'),
+('Cancelled'),
+('Enabled'),
+('Disable')

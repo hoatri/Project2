@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="1295.0" style="-fx-background-color: #525151;" styleClass="background-white" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FoodMart.StatusController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <children>
+        <Pane prefHeight="149.0" prefWidth="211.0" />
+        <VBox layoutX="8.0" layoutY="-1.0" prefHeight="742.0" prefWidth="211.0" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="-27.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="-1.0">
+            <children>
+            <ImageView fitHeight="258.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/logo2.png" />
+               </image>
+            </ImageView>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoOrder" prefHeight="48.0" prefWidth="200.0" style="-jfx-disable-visual-focus: true;" styleClass="hover-hand" text="Orders" textFill="WHITE">
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                    </font>
+                    <graphic>
+                        <MaterialDesignIconView fill="#7acff9" glyphName="CALCULATOR" size="25" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoProduct" prefHeight="47.0" prefWidth="197.0" style="-jfx-disable-visual-focus: true;" styleClass="hover-hand" text="Products" textFill="WHITE">
+                    <graphic>
+                        <FontAwesomeIconView fill="#7acff9" glyphName="BALANCE_SCALE" size="25" />
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoCategory" prefHeight="47.0" prefWidth="197.0" styleClass="hover-hand" text="Categories" textFill="WHITE">
+                    <graphic>
+                        <MaterialDesignIconView fill="#7acff9" glyphName="APPS" size="27" />
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoCustomer" prefHeight="47.0" prefWidth="197.0" styleClass="hover-hand" text="Customers" textFill="WHITE">
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                    </font>
+                    <graphic>
+                        <MaterialDesignIconView fill="#7acff9" glyphName="ACCOUNT_MULTIPLE" size="25" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoAdmin" prefHeight="47.0" prefWidth="197.0" styleClass="hover-hand" text="Admins" textFill="WHITE">
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                    </font>
+                    <graphic>
+                        <MaterialDesignIconView fill="#7acff9" glyphName="ACCOUNT" size="25" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoStatus" prefHeight="47.0" prefWidth="197.0" styleClass="hover-hand" text="Status" textFill="WHITE">
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                    <graphic>
+                        <MaterialDesignIconView fill="#7acff9" glyphName="CLOCK" size="25" />
+                    </graphic>
+                </JFXButton>
+                <Separator prefWidth="200.0" />
+                <JFXButton fx:id="admin" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="47.0" prefWidth="197.0" styleClass="hover-hand" text="Admin" textFill="WHITE">
+                    <graphic>
+                        <MaterialDesignIconView fill="#7acff9" glyphName="ACCOUNT_CHECK" size="25" />
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Italic" size="13.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#logout" prefHeight="47.0" prefWidth="197.0" styleClass="hover-hand" text="Logout" textFill="WHITE">
+                    <graphic>
+                        <MaterialDesignIconView fill="#7acff9" glyphName="EXIT_TO_APP" size="25" />
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </VBox>
+        <AnchorPane layoutX="215.0" layoutY="81.0" minWidth="507.0" prefHeight="659.0" prefWidth="1105.0" styleClass="background-white" AnchorPane.bottomAnchor="-23.0" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="-25.0" AnchorPane.topAnchor="81.0">
+            <children>
+                <AnchorPane id="AnchorPane" layoutX="18.0" layoutY="100.0" prefHeight="529.0" prefWidth="387.0" styleClass="background-white" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="100.0">
+                    <stylesheets>
+                        <URL value="@style.css" />
+                    </stylesheets>
+                    <children>
+                        <GridPane layoutX="14.0" layoutY="3.0" prefHeight="213.0" prefWidth="300.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label fx:id="noti" wrapText="true" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="123.0" prefWidth="309.0" spacing="22.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                           <children>
+                                      <Label fx:id="labelEditor" alignment="CENTER" prefHeight="43.0" prefWidth="347.0" text="New Status Details" textFill="#16313e">
+                                          <font>
+                                              <Font name="System Bold" size="24.0" />
+                                          </font>
+                                      </Label>
+                           </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                            <JFXButton buttonType="RAISED" layoutX="63.0" layoutY="387.0" onAction="#save" prefHeight="29.0" prefWidth="141.0" styleClass="btn-success" text="Save">
+                                <font>
+                                    <Font name="System Bold" size="13.0" />
+                                </font>
+                                <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="CHECK" size="15" />
+                                </graphic>
+                            </JFXButton>
+                            <JFXButton buttonType="RAISED" layoutX="215.0" layoutY="387.0" onAction="#clear" prefHeight="29.0" prefWidth="151.0" styleClass="btn-danger" text="Clear">
+                                <font>
+                                    <Font name="System Bold" size="13.0" />
+                                </font>
+                                <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="15" />
+                                </graphic>
+                            </JFXButton>
+                          <JFXTextField fx:id="txtStatus" labelFloat="true" layoutX="95.0" layoutY="301.0" prefHeight="43.0" prefWidth="211.0" promptText="Status" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="419.0" layoutY="25.0" prefHeight="645.0" prefWidth="652.0" AnchorPane.bottomAnchor="-25.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="25.0">
+                    <children>
+                        <TableView fx:id="tvStatus" layoutX="63.0" layoutY="107.0" prefHeight="445.0" prefWidth="665.0" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="107.0">
+                            <columns>
+                                <TableColumn fx:id="tcStatusCode" prefWidth="100.0" resizable="false" text="Code" />
+                                <TableColumn fx:id="tcStatusName" prefWidth="301.0" resizable="false" text="Status" />
+                            </columns>
+                        </TableView>
+                  <ImageView fitHeight="176.0" fitWidth="660.0" layoutX="53.0" layoutY="-104.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/logo4.png" />
+                     </image>
+                  </ImageView>
+                        <GridPane hgap="10.0" layoutX="105.0" layoutY="552.0" prefHeight="59.0" prefWidth="611.0" AnchorPane.leftAnchor="105.0" AnchorPane.topAnchor="552.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                     <children>
+                                <JFXButton buttonType="RAISED" onAction="#refresh" prefHeight="25.0" prefWidth="111.0" styleClass="btn-success" text="   Refresh">
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="20" wrappingWidth="4.142856597900391" />
+                                    </graphic>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </JFXButton>
+                                <JFXButton buttonType="RAISED" onAction="#createNew" prefHeight="37.0" prefWidth="117.0" styleClass="btn-info" text="New" GridPane.columnIndex="1">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="20" />
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton buttonType="RAISED" onAction="#edit" prefHeight="37.0" prefWidth="128.0" styleClass="btn-primary" text="Edit" GridPane.columnIndex="2">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </JFXButton>
+                                <JFXButton buttonType="RAISED" onAction="#delete" prefHeight="37.0" prefWidth="132.0" styleClass="btn-danger" text="Delete" GridPane.columnIndex="3">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="20" />
+                                    </graphic>
+                                </JFXButton>
+                                  <FontAwesomeIconView fill="WHITE" glyphName="PENCIL_SQUARE" size="20" text="   " wrappingWidth="35.14285659790039" GridPane.columnIndex="2" />
+                     </children>
+                        </GridPane>
+                          <TextField fx:id="filterField" layoutX="66.0" layoutY="79.0" onKeyPressed="#search" prefHeight="25.0" prefWidth="660.0" promptText="Search Box" />
+                    </children>
+                </AnchorPane>
+                <ImageView fitHeight="176.0" fitWidth="460.0" layoutX="-3.0" layoutY="-79.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Image/logo3.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
