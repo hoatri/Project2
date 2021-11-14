@@ -148,16 +148,6 @@ public class LoginController{
         loginEmail.validate();
         loginPass.getValidators().add(required);
         loginPass.validate();
-//        loginEmail.textProperty().addListener((o, oldVal, newVal) -> {
-//            if (newVal == null ? oldVal != null : !newVal.equals(oldVal)) {
-//                loginEmail.validate();
-//            }
-//        });
-//        loginPass.textProperty().addListener((o, oldVal, newVal) -> {
-//            if (newVal == null ? oldVal != null : !newVal.equals(oldVal)) {
-//                loginPass.validate();
-//            }
-//        });
         return loginEmail.validate() && loginPass.validate();
     }
     
@@ -181,6 +171,7 @@ public class LoginController{
     @FXML
     void toggleSignUp(MouseEvent event) {
         if(signUpPan.visibleProperty().getValue()==false){
+            signUpSucc.setText("");
             fullName.setText("1");
             address.setText("1");
             signUpEmail.setText("asd@asd.asd");
