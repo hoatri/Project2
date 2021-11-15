@@ -155,13 +155,15 @@ public class LoginController{
         if (validateInfo()) {
             String email = loginEmail.getText();
             String password = sha1(loginPass.getText());
-            if (txtAdmin.visibleProperty().getValue()==true && Admin_query.authenticateAdmin(email, password)) {
-                AdminSession.getInstance().setEmail(email);
-                Navigator.getInstance().gotoAdmin();
-            }else if(txtCustomer.visibleProperty().getValue()==true && Admin_query.authenticateAdmin(email, password)){
-                AdminSession.getInstance().setEmail(email);
-                Navigator.getInstance().gotoStatusIndex();
+            String name = Admin_query.authenticateAdmin(email, password);
+            if (txtAdmin.visibleProperty().getValue()==true && name !="") {
+                AdminSession.getInstance().setName(name);
+                Navigator.getInstance().gotoStatus();
             }
+//              else if(txtCustomer.visibleProperty().getValue()==true && Admin_query.authenticateAdmin(email, password)!=""){
+//                AdminSession.getInstance().setEmail(email);
+//                Navigator.getInstance().gotoStatus();
+//            }
             else {
                 loginError.setVisible(true);
             }

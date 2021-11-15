@@ -11,7 +11,7 @@ package database;
  */
 public final class AdminSession {
     private static AdminSession instance;
-    
+    private String name;
     private String email;
     
     private Admin_query adminDao = new Admin_query();
@@ -26,6 +26,14 @@ public final class AdminSession {
         return instance;
     }
 
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public String getEmail() {
         return email;
     }

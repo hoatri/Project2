@@ -172,7 +172,7 @@ public class Admin_query implements query<Admin>{
         return null;
     }
     
-    public static boolean authenticateAdmin(String email, String password) {
+    public static String authenticateAdmin(String email, String password) {
         String sql = "SELECT * FROM Admin WHERE email = ? AND password_hash = ?";
         try (
             Connection conn = Database.getConnection();
@@ -181,11 +181,11 @@ public class Admin_query implements query<Admin>{
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                return true;
+                return rs.getString(2);
             }
         } catch (Exception e) {
         }
-        return false;
+        return "";
     }
     
     public boolean isUnique(String email){

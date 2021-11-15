@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="1290.0" style="-fx-background-color: red;" styleClass="background-white" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mc.StatusController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <children>
+        <VBox prefHeight="717.0" prefWidth="210.0" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+            <HBox prefHeight="74.0" prefWidth="210.0">
+               <children>
+                  <ImageView fitHeight="74.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/logo1.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="admin" prefHeight="74.0" prefWidth="196.0" text="......" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoOrder" prefHeight="50.0" prefWidth="210.0" style="-jfx-disable-visual-focus: true;" styleClass="hover-hand" text="Orders" textFill="WHITE">
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                    <graphic>
+                        <MaterialDesignIconView fill="#9ca2a8" glyphName="CALCULATOR" size="25" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoProduct" prefHeight="50.0" prefWidth="210.0" style="-jfx-disable-visual-focus: true;" styleClass="hover-hand" text="Products" textFill="WHITE">
+                    <graphic>
+                        <FontAwesomeIconView fill="#9ca2a8" glyphName="BALANCE_SCALE" size="25" />
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoCategory" prefHeight="50.0" prefWidth="210.0" styleClass="hover-hand" text="Categories" textFill="WHITE">
+                    <graphic>
+                        <MaterialDesignIconView fill="#9ca2a8" glyphName="APPS" size="27" />
+                    </graphic>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoCustomer" prefHeight="50.0" prefWidth="210.0" styleClass="hover-hand" text="Customers" textFill="WHITE">
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                    <graphic>
+                        <MaterialDesignIconView fill="#9ca2a8" glyphName="ACCOUNT_MULTIPLE" size="25" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoAdmin" prefHeight="50.0" prefWidth="210.0" styleClass="hover-hand" text="Admins" textFill="WHITE">
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                    <graphic>
+                        <MaterialDesignIconView fill="#9ca2a8" glyphName="ACCOUNT" size="25" />
+                    </graphic>
+                </JFXButton>
+                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" onAction="#gotoStatus" prefHeight="50.0" prefWidth="210.0" styleClass="hover-hand" text="Status" textFill="WHITE">
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                    <graphic>
+                        <MaterialDesignIconView fill="#9ca2a8" glyphName="CLOCK" size="25" />
+                    </graphic>
+                </JFXButton>
+            </children>
+        </VBox>
+      <AnchorPane layoutX="229.0" prefHeight="59.0" prefWidth="1080.0" style="-fx-background-color: #D7DDE4;" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTextField fx:id="filterField" focusColor="#767a80" layoutX="57.0" layoutY="13.0" onKeyPressed="#search" prefHeight="12.0" prefWidth="295.0" promptText="Search" unFocusColor="#d7dde4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="30.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="21.0">
+               <image>
+                  <Image url="@../Image/Magnify.png" />
+               </image>
+            </ImageView>
+                    <JFXButton buttonType="RAISED" layoutX="370.0" layoutY="11.0" onAction="#refresh" prefHeight="25.0" prefWidth="111.0" text="Refresh" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <graphic>
+                            <FontAwesomeIconView fill="#9ca2a8" glyphName="REFRESH" size="20" />
+                        </graphic>
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </JFXButton>
+                    <JFXButton buttonType="RAISED" layoutX="482.0" onAction="#createNew" prefHeight="37.0" prefWidth="111.0" text="New" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                        <graphic>
+                            <FontAwesomeIconView fill="#9ca2a8" glyphName="PLUS" size="20" />
+                        </graphic>
+                    </JFXButton>
+                    <JFXButton buttonType="RAISED" layoutX="593.0" onAction="#edit" prefHeight="37.0" prefWidth="111.0" text="Edit" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+               <graphic>
+                            <FontAwesomeIconView fill="#9ca2a8" glyphName="PENCIL_SQUARE" size="20" wrappingWidth="23.14285659790039" />
+               </graphic>
+                    </JFXButton>
+                    <JFXButton buttonType="RAISED" layoutX="704.0" layoutY="1.0" onAction="#delete" prefHeight="37.0" prefWidth="111.0" text="Delete" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                        <graphic>
+                            <FontAwesomeIconView fill="#9ca2a8" glyphName="TRASH" size="20" />
+                        </graphic>
+                    </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" graphicTextGap="20.0" layoutX="946.0" layoutY="4.0" onAction="#logout" prefHeight="47.0" prefWidth="132.0" styleClass="hover-hand" text="Logout" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <MaterialDesignIconView fill="#9ca2a8" glyphName="EXIT_TO_APP" size="25" />
+               </graphic>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <Line endX="100.0" layoutX="382.0" layoutY="2.0" startX="100.0" startY="55.0" stroke="#b9b0b0" AnchorPane.bottomAnchor="1.5" AnchorPane.topAnchor="1.5" />
+            <Line endX="100.0" layoutX="495.0" startX="100.0" startY="55.0" stroke="#b9b0b0" />
+            <Line endX="100.0" layoutX="604.0" startX="100.0" startY="55.0" stroke="#b9b0b0" />
+            <Line endX="100.0" layoutX="715.0" layoutY="3.0" startX="100.0" startY="55.0" stroke="#b9b0b0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Line endX="100.0" layoutX="271.0" layoutY="7.0" startX="100.0" startY="55.0" stroke="#b9b0b0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+        <AnchorPane layoutX="211.0" layoutY="57.0" minWidth="507.0" prefHeight="660.0" prefWidth="1060.0" styleClass="background-white" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0">
+            <children>
+                <AnchorPane id="AnchorPane" layoutX="23.0" layoutY="30.0" prefHeight="660.0" prefWidth="384.0" styleClass="background-white" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <stylesheets>
+                        <URL value="@style.css" />
+                    </stylesheets>
+                    <children>
+                            <JFXButton buttonType="RAISED" layoutX="30.0" layoutY="214.0" onAction="#save" prefHeight="29.0" prefWidth="141.0" styleClass="btn-success" text="Save" AnchorPane.leftAnchor="30.0">
+                                <font>
+                                    <Font name="System Bold" size="13.0" />
+                                </font>
+                                <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="CHECK" size="15" />
+                                </graphic>
+                            </JFXButton>
+                            <JFXButton buttonType="RAISED" layoutX="199.0" layoutY="214.0" onAction="#clear" prefHeight="29.0" prefWidth="151.0" styleClass="btn-danger" text="Clear" AnchorPane.rightAnchor="30.0">
+                                <font>
+                                    <Font name="System Bold" size="13.0" />
+                                </font>
+                                <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="15" />
+                                </graphic>
+                            </JFXButton>
+                          <JFXTextField fx:id="txtStatus" labelFloat="true" layoutX="50.0" layoutY="140.0" prefHeight="29.0" prefWidth="281.0" promptText="Status" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                          <Label fx:id="noti" layoutX="50.0" layoutY="180.0" text="ấdfasd" wrapText="true">
+                              <font>
+                                  <Font name="System Bold" size="15.0" />
+                              </font>
+                          </Label>
+                          <Label fx:id="labelEditor" alignment="CENTER" layoutX="17.0" layoutY="84.0" prefHeight="43.0" prefWidth="347.0" text="New Status Details" textFill="#16313e" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0">
+                              <font>
+                                  <Font name="System Bold" size="24.0" />
+                              </font>
+                          </Label>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutX="380.0" prefHeight="597.0" prefWidth="699.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="381.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <TableView fx:id="tvStatus" layoutY="58.0" prefHeight="529.0" prefWidth="690.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                            <columns>
+                                <TableColumn fx:id="tcStatusCode" prefWidth="100.0" resizable="false" text="Code" />
+                                <TableColumn fx:id="tcStatusName" prefWidth="301.0" resizable="false" text="Status" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

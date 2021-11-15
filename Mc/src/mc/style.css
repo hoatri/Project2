@@ -13,7 +13,7 @@ and open the template in the editor.
 }
 
 .sidebar {
-    -fx-background-color: #b83e3e;
+    -fx-background-color: #394651;
 }
 
 .btn-danger {
@@ -24,14 +24,14 @@ and open the template in the editor.
     -fx-background-color: #1DB954;
     -fx-text-fill: white;
 }
-.btn-primary {
+/*.btn-primary {
     -fx-background-color: lightskyblue;
     -fx-text-fill: white;
-}
-.btn-info {
+}*/
+/*.btn-info {
     -fx-background-color:  #1a7499;
     -fx-text-fill: white;
-}
+}*/
 .hover-hand, .btn-danger, .btn-success, .btn-primary, .btn-info{
     -fx-cursor: hand;
 }
