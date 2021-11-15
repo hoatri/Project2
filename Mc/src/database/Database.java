@@ -41,4 +41,27 @@ public class Database {
             return null;
         }
     }
+    
+//    public static Connection getConnection(String i) throws ClassNotFoundException{
+//        try{
+//            
+//            if(i=="server"){
+//                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//                Database.connection=DriverManager.getConnection(URL, USERNAME, PASSWORD);
+//                if(connection!=null){
+//                    DatabaseMetaData data=(DatabaseMetaData)Database.connection.getMetaData();
+//                }else{
+//                    return null;
+//                }
+//            }else if(i=="heidi"){
+//                Database.connection=DriverManager.getConnection(MYSQL_CONN_STRING,MYSQL_USERNAME,MYSQL_PASSWORD);           
+//                if(connection==null){
+//                    return null;
+//                }
+//            }
+//            return Database.connection;
+//        }catch(SQLException ex){
+//            return null;
+//        }
+//    }
 }

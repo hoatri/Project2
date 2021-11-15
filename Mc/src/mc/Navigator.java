@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class Navigator {
     public static final String LOGIN_FXML = "Login.fxml";
     public static final String ADMIN_FXML = "Admin.fxml";
+    public static final String STATUS_FXML = "Status.fxml";
     
     private FXMLLoader loader;
     private Stage stage = null;
@@ -48,5 +49,9 @@ public class Navigator {
 
     public void gotoAdmin() throws IOException {
         this.goTo(ADMIN_FXML);
+    }
+    
+    public void gotoStatusIndex() throws IOException {
+        this.goTo(STATUS_FXML);
     }
 }

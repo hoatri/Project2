@@ -19,7 +19,30 @@ public class Product_query implements query<Product>{
 
     @Override
     public ObservableList<Product> selectAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ObservableList<Product> products = FXCollections.observableArrayList();
+
+        try (
+            Connection conn = Database.getConnection();
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery("SELECT product.*, category.categoryName, `status`.statusName FROM product LEFT JOIN category ON product.categoryID = category.categoryID LEFT JOIN `status` ON product.status = `status`.code");) {
+            while (rs.next()) {
+                Product p = new Product();
+                p.setProductId(rs.getInt("productID"));
+                p.setProductName(rs.getString("productName"));
+                p.setPrice(rs.getDouble("price"));
+                p.setStock(rs.getInt("stock"));
+                p.setDescription(rs.getString("description"));
+                p.setImage(rs.getString("image"));
+                p.setCategoryId(rs.getInt("categoryID"));
+                p.setCategoryName(rs.getString("categoryName"));
+//                p.setStatusCode(rs.getInt("status"));
+//                p.setStatus(rs.getString("statusName"));
+                products.add(p);
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        return products;
     }
 
     @Override
@@ -48,7 +71,10 @@ public class Product_query implements query<Product>{
         try (
                 Connection conn = Database.getConnection();
                 Statement stm = conn.createStatement();
-                ResultSet rs = stm.executeQuery("SELECT product.*, category.categoryName FROM product LEFT JOIN category ON product.categoryID = category.categoryID WHERE `status` <> 5 OR `status` IS NULL");) {
+                ResultSet rs = stm.executeQuery(
+                "SELECT product.*, category.categoryName FROM product "+
+                "LEFT JOIN category ON product.categoryID = category.categoryID"+
+                " WHERE `status` <> 5 OR `status` IS NULL");) {
                 while (rs.next()) {
                 Product p = new Product();
                 p.setProductId(rs.getInt("productID"));
@@ -58,7 +84,7 @@ public class Product_query implements query<Product>{
                 p.setDescription(rs.getString("description"));
                 p.setImage(rs.getString("image"));
                 p.setCategoryId(rs.getInt("categoryID"));
-                p.setCategoryName(rs.getString("categoryName"));
+                //p.setCategoryName(rs.getString("categoryName"));
                 products.add(p);
             }
         } catch (Exception e) {

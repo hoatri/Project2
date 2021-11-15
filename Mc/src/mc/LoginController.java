@@ -160,7 +160,7 @@ public class LoginController{
                 Navigator.getInstance().gotoAdmin();
             }else if(txtCustomer.visibleProperty().getValue()==true && Admin_query.authenticateAdmin(email, password)){
                 AdminSession.getInstance().setEmail(email);
-                Navigator.getInstance().gotoAdmin();
+                Navigator.getInstance().gotoStatusIndex();
             }
             else {
                 loginError.setVisible(true);

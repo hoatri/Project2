@@ -17,14 +17,14 @@ import javafx.beans.property.StringProperty;
 public class Product {
     private ObjectProperty<Integer> productId;
     private StringProperty productName;
-    private ObjectProperty<Double> price;
-    private ObjectProperty<Integer> stock;
-    private StringProperty description;
-    private StringProperty image;
     private ObjectProperty<Integer> categoryId;
+    private StringProperty description;
+    private ObjectProperty<Integer> stock;
+    private StringProperty image;
+    private ObjectProperty<Double> price;
     private StringProperty categoryName;
-    private ObjectProperty<Integer> statusCode;
-    private StringProperty status;
+//    private ObjectProperty<Integer> statusCode;
+//    private StringProperty status;
 
     public Product() {
         this.productId = new SimpleObjectProperty<>();
@@ -35,8 +35,8 @@ public class Product {
         this.image = new SimpleStringProperty();
         this.categoryId = new SimpleObjectProperty<>();
         this.categoryName = new SimpleStringProperty();
-        this.statusCode = new SimpleObjectProperty<>();
-        this.status = new SimpleStringProperty();
+//        this.statusCode = new SimpleObjectProperty<>();
+//        this.status = new SimpleStringProperty();
     }
 
     public Integer getProductId() {
@@ -70,14 +70,13 @@ public class Product {
     public String getCategoryName() {
         return categoryName.get();
     }
-
-    public Integer getStatusCode() {
-        return statusCode.get();
-    }
-
-    public String getStatus() {
-        return status.get();
-    }
+//    public Integer getStatusCode() {
+//        return statusCode.get();
+//    }
+//
+//    public String getStatus() {
+//        return status.get();
+//    }
 
     public void setProductId(Integer productId) {
         this.productId.set(productId);
@@ -111,13 +110,13 @@ public class Product {
         this.categoryName.set(categoryName);
     }
 
-    public void setStatusCode(Integer statusCode) {
-        this.statusCode.set(statusCode);
-    }
-
-    public void setStatus(String status) {
-        this.status.set(status);
-    }
+//    public void setStatusCode(Integer statusCode) {
+//        this.statusCode.set(statusCode);
+//    }
+//
+//    public void setStatus(String status) {
+//        this.status.set(status);
+//    }
 
     public ObjectProperty<Integer> getProductIdProperty() {
         return productId;
@@ -151,7 +150,7 @@ public class Product {
         return categoryName;
     }
 
-    public StringProperty getStatusProperty() {
-        return status;
-    }
+//    public StringProperty getStatusProperty() {
+//        return status;
+//    }
 }

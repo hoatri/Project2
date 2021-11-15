@@ -19,6 +19,7 @@ public class Admin {
     private StringProperty adminName;
     private StringProperty email;
     private StringProperty password;
+    private StringProperty phone;
     
     public Admin() {
         this.adminId = new SimpleObjectProperty<>();
@@ -59,6 +60,14 @@ public class Admin {
         this.password.set(password);
     }
     
+    public String getPhone() {
+        return phone.get();
+    }
+
+    public void setPhone(String phone) {
+        this.phone.set(phone);
+    }
+    
     public ObjectProperty<Integer> getAdminIdProperty() {
         return adminId;
     }
@@ -73,5 +82,9 @@ public class Admin {
 
     public StringProperty getPasswordProperty() {
         return password;
+    }
+    
+    public StringProperty getPhoneProperty() {
+        return phone;
     }
 }

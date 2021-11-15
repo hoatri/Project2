@@ -70,7 +70,7 @@
             <Line fx:id="line" endX="360.710693359375" endY="-35.0" layoutX="-90.0" layoutY="366.0" startX="150.0" startY="-35.0" stroke="#ff9900" strokeWidth="100.0" visible="false" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="signUpPan" minWidth="-Infinity" prefHeight="200.0" prefWidth="333.0" style="-fx-background-color: #FF9900;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="signUpPan" minWidth="-Infinity" prefHeight="200.0" prefWidth="333.0" style="-fx-background-color: #FF9900;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Text fill="WHITE" layoutX="126.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up">
                <font>
