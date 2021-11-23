@@ -188,7 +188,7 @@
                                     <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="15" />
                                 </graphic>
                             </JFXButton>
-                          <JFXTextField fx:id="txtStatus" labelFloat="true" layoutX="50.0" layoutY="140.0" prefHeight="29.0" prefWidth="281.0" promptText="Status" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                          <JFXTextField fx:id="txtStatus" labelFloat="true" layoutX="50.0" layoutY="140.0" onKeyPressed="#onEnterPressed" prefHeight="29.0" prefWidth="281.0" promptText="Status" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
                           <Label fx:id="noti" layoutX="50.0" layoutY="180.0" wrapText="true">
                               <font>
                                   <Font name="System Bold" size="15.0" />
@@ -201,7 +201,7 @@
                           </Label>
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="380.0" prefHeight="597.0" prefWidth="699.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="381.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane layoutX="380.0" prefHeight="597.0" prefWidth="710.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="381.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
                         <TableView fx:id="tvStatus" layoutY="58.0" prefHeight="529.0" prefWidth="690.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                             <columns>

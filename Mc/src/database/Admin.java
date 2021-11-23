@@ -26,6 +26,7 @@ public class Admin {
         this.adminName = new SimpleStringProperty();
         this.email = new SimpleStringProperty();
         this.password = new SimpleStringProperty();
+        this.phone = new SimpleStringProperty();
     }
 
     public Integer getAdminId() {

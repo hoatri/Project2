@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
@@ -108,16 +109,6 @@
         </VBox>
       <AnchorPane layoutX="229.0" prefHeight="59.0" prefWidth="1080.0" style="-fx-background-color: #D7DDE4;" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXTextField fx:id="filterField" focusColor="#767a80" layoutX="57.0" layoutY="13.0" onKeyPressed="#search" prefHeight="12.0" prefWidth="295.0" promptText="Search" unFocusColor="#d7dde4">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </JFXTextField>
-            <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="30.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="21.0">
-               <image>
-                  <Image url="@../Image/Magnify.png" />
-               </image>
-            </ImageView>
                     <JFXButton buttonType="RAISED" layoutX="370.0" layoutY="11.0" onAction="#refresh" prefHeight="25.0" prefWidth="111.0" text="Refresh" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                         <graphic>
                             <FontAwesomeIconView fill="#9ca2a8" glyphName="REFRESH" size="20" />
@@ -172,7 +163,7 @@
                         <URL value="@style.css" />
                     </stylesheets>
                     <children>
-                            <JFXButton buttonType="RAISED" layoutX="30.0" layoutY="214.0" onAction="#save" prefHeight="29.0" prefWidth="141.0" styleClass="btn-success" text="Save" AnchorPane.leftAnchor="30.0">
+                            <JFXButton buttonType="RAISED" layoutX="30.0" layoutY="243.0" onAction="#save" prefHeight="29.0" prefWidth="141.0" styleClass="btn-success" text="Save" AnchorPane.leftAnchor="30.0">
                                 <font>
                                     <Font name="System Bold" size="13.0" />
                                 </font>
@@ -180,7 +171,7 @@
                                     <FontAwesomeIconView fill="WHITE" glyphName="CHECK" size="15" />
                                 </graphic>
                             </JFXButton>
-                            <JFXButton buttonType="RAISED" layoutX="199.0" layoutY="214.0" onAction="#clear" prefHeight="29.0" prefWidth="151.0" styleClass="btn-danger" text="Clear" AnchorPane.rightAnchor="30.0">
+                            <JFXButton buttonType="RAISED" layoutX="203.0" layoutY="243.0" onAction="#clear" prefHeight="29.0" prefWidth="151.0" styleClass="btn-danger" text="Clear" AnchorPane.rightAnchor="30.0">
                                 <font>
                                     <Font name="System Bold" size="13.0" />
                                 </font>
@@ -188,20 +179,21 @@
                                     <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="15" />
                                 </graphic>
                             </JFXButton>
-                          <JFXTextField fx:id="txtStatus" labelFloat="true" layoutX="50.0" layoutY="140.0" onKeyPressed="#onEnterPressed" prefHeight="29.0" prefWidth="281.0" promptText="Status" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                          <JFXTextField fx:id="txtStatus" labelFloat="true" layoutX="50.0" layoutY="140.0" opacity="0.54" prefHeight="29.0" prefWidth="281.0" promptText="Category Name" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
                           <Label fx:id="noti" layoutX="50.0" layoutY="180.0" wrapText="true">
                               <font>
                                   <Font name="System Bold" size="15.0" />
                               </font>
                           </Label>
-                          <Label fx:id="labelEditor" alignment="CENTER" layoutX="17.0" layoutY="84.0" prefHeight="43.0" prefWidth="347.0" text="New Status Details" textFill="#16313e" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0">
+                          <Label fx:id="labelEditor" alignment="CENTER" layoutX="17.0" layoutY="84.0" prefHeight="43.0" prefWidth="347.0" text="New Category Details" textFill="#16313e" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0">
                               <font>
                                   <Font name="System Bold" size="24.0" />
                               </font>
                           </Label>
+                  <JFXComboBox layoutX="50.0" layoutY="189.0" opacity="0.54" prefHeight="25.0" prefWidth="284.0" promptText="Parent Category" />
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="380.0" prefHeight="597.0" prefWidth="710.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="381.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane layoutX="380.0" prefHeight="597.0" prefWidth="699.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="381.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
                         <TableView fx:id="tvStatus" layoutY="58.0" prefHeight="529.0" prefWidth="690.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                             <columns>

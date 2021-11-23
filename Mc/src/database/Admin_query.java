@@ -49,7 +49,7 @@ public class Admin_query implements query<Admin>{
         ResultSet key = null;
         try (
             Connection conn = Database.getConnection();
-            PreparedStatement stmt= conn.prepareStatement(sql);) {
+            PreparedStatement stmt= conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
             stmt.setString(1, newAdmin.getAdminName());
             stmt.setString(2, newAdmin.getEmail());
             stmt.setString(3, newAdmin.getPassword());
@@ -84,7 +84,7 @@ public class Admin_query implements query<Admin>{
 
     @Override
     public boolean update(Admin admin) {
-        String sql = "UPDATE admin SET `adminName` = ?, email = ?, password_hash = ?, phone= ? WHERE adminID = ?";
+        String sql = "UPDATE admin SET adminName = ?, email = ?, password_hash = ?, phone= ? WHERE adminID = ?";
         try (
             Connection conn = Database.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql);) {
@@ -107,7 +107,7 @@ public class Admin_query implements query<Admin>{
 
     @Override
     public boolean delete(Admin admin) {
-        String sql = "DELETE FROM admin WHERE adminID = ?;";
+        String sql = "DELETE FROM admin WHERE adminID = ?";
         try (
             Connection conn = Database.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql);) {

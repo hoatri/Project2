@@ -125,6 +125,7 @@ public class LoginController{
     
     @FXML
     void adminPan(MouseEvent event) {
+        resetListener();
         txtCustomer.setVisible(false);
         txtCustomer1.setVisible(false);
         txtAdmin.setVisible(true);
@@ -134,6 +135,7 @@ public class LoginController{
 
     @FXML
     void customerPan(MouseEvent event) {
+        resetListener();
         txtCustomer.setVisible(true);
         txtCustomer1.setVisible(true);
         txtAdmin.setVisible(false);
@@ -190,12 +192,7 @@ public class LoginController{
             addListenerSignUp();
             signUpPan.setVisible(true);
         }else{
-            loginEmail.setText("1");
-            loginPass.setText("1");
-            removeListenerLogin();
-            loginEmail.setText("");
-            loginPass.setText("");
-            addListenerLogin();
+            resetListener();
             signUpPan.setVisible(false);
         }
     }
@@ -293,6 +290,15 @@ public class LoginController{
         }
     }
     
+    public void resetListener(){
+        loginEmail.setText("1");
+        loginPass.setText("1");
+        removeListenerLogin();
+        loginEmail.setText("");
+        loginPass.setText("");
+        addListenerLogin();
+    }
+    
     public void initialize() {
         loginEmailListener = (ObservableValue<? extends String> o, String oldVal, String newVal) -> {
             if (newVal == null ? oldVal != null : !newVal.equals(oldVal)) {
@@ -334,5 +340,6 @@ public class LoginController{
                 confirmPass.validate();
             }
         };
+        resetListener();
     }
 }

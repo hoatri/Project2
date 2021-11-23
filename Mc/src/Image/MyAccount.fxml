@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FoodMart.MyAccountController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <children>
+        <AnchorPane prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: red;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <JFXButton layoutX="1186.0" layoutY="3.0" onAction="#logout" styleClass="hover-hand" text="Logout" AnchorPane.rightAnchor="20.0">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+        <ImageView fitHeight="168.0" fitWidth="184.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0">
+            <image>
+                <Image url="@../Image/logo2.png" />
+            </image>
+        </ImageView>
+        <HBox alignment="CENTER_RIGHT" layoutX="240.0" layoutY="37.0" prefHeight="90.0" spacing="20.0" AnchorPane.rightAnchor="100.0">
+         <children>
+            <JFXButton onAction="#gotoHome" styleClass="hover-hand" text="Home" textFill="RED">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton onAction="#gotoAboutUs" text="About Us" textFill="RED">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton onAction="#gotoMyAccount" styleClass="hover-hand" text="My Account" textFill="RED">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnCart" onAction="#gotoCart" styleClass="hover-hand" text="Cart" textFill="RED">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="RED" glyphName="CART" size="25" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+        <AnchorPane layoutX="8.0" layoutY="212.0" prefHeight="508.0" prefWidth="239.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="212.0">
+         <children>
+            <VBox layoutX="53.0" layoutY="-44.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton onAction="#viewOrders" text="Orders" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton onAction="#view" text="Account Details" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton onAction="#logout" text="Logout" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+        <AnchorPane layoutX="252.0" layoutY="154.0" prefHeight="551.0" prefWidth="1028.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="252.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+         <children>
+            <StackPane layoutX="50.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="327.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <GridPane fx:id="paneEdit" alignment="CENTER_LEFT" hgap="50.0" onKeyPressed="#enter" prefHeight="481.0" prefWidth="651.0" styleClass="background-white">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <HBox spacing="100.0" GridPane.rowIndex="1">
+                           <children>
+                              <JFXTextField fx:id="tfName" labelFloat="true" prefHeight="25.0" prefWidth="275.0" promptText="Full Name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="tfEmail" labelFloat="true" prefHeight="25.0" prefWidth="275.0" promptText="Email">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <JFXPasswordField fx:id="tfPwd" labelFloat="true" prefHeight="25.0" prefWidth="275.0" promptText="Current Password" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <HBox spacing="100.0" GridPane.rowIndex="2">
+                           <children>
+                              <JFXTextField fx:id="tfAddress" labelFloat="true" prefHeight="25.0" prefWidth="275.0" promptText="Address">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="tfPhone" labelFloat="true" prefHeight="25.0" prefWidth="275.0" promptText="Phone Number">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <JFXPasswordField fx:id="tfNewPwd" labelFloat="true" prefHeight="25.0" prefWidth="275.0" promptText="New Password" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <HBox alignment="CENTER_LEFT" spacing="30.0" GridPane.rowIndex="6">
+                           <children>
+                              <JFXButton onAction="#save" styleClass="btn-primary" text="Save changes" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton onAction="#view" styleClass="hover-hand" text="Back" textFill="#6ac2ee">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <JFXPasswordField fx:id="tfConfirmPwd" labelFloat="true" prefHeight="25.0" prefWidth="275.0" promptText="Confirm Password" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <HBox spacing="100.0">
+                           <children>
+                              <Label text="Edit Account Details" textFill="#428bca">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="noti" prefHeight="34.0" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+                  <AnchorPane fx:id="paneOrders" styleClass="background-white">
+                     <children>
+                        <GridPane fx:id="gpOrders" hgap="20.0" styleClass="background-white" vgap="15.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Order" textFill="#747474">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Action" textFill="#747474" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Total" textFill="#747474" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Status" textFill="#747474" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Date" textFill="#747474" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <VBox fx:id="paneOrderDetail" spacing="20.0" styleClass="background-white">
+                     <children>
+                        <Label fx:id="txtDetail">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Order Details">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <GridPane fx:id="gpOrderDetail" alignment="CENTER" styleClass="background-white">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="50.0" vgrow="NEVER" />
+                           </rowConstraints>
+                           <children>
+                              <HBox fillHeight="false" minHeight="-Infinity" prefHeight="50.0">
+                                 <children>
+                                    <Label text="Product" textFill="#747474">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox fillHeight="false" minHeight="-Infinity" prefHeight="50.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label text="Total" textFill="#747474">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                        <JFXButton fx:id="btnCancel" disable="true" onAction="#cancelOrder" styleClass="btn-primary" text="Cancel order" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="paneView" fillWidth="false" minWidth="-Infinity" spacing="30.0" styleClass="background-white">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="100.0">
+                           <children>
+                              <Label text="Account Details" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton onAction="#edit" styleClass="hover-hand" text="Edit" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <GridPane hgap="50.0" vgap="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Full name" textFill="#747474">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Address" textFill="#747474" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Phone" textFill="#747474" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Email" textFill="#747474" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtName" textFill="#747474" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtAddress" textFill="#747474" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtPhone" textFill="#747474" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="txtEmail" textFill="#747474" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </children>
+        </AnchorPane>
+        <Separator layoutX="27.0" layoutY="126.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0" />
+    </children>
+</AnchorPane>

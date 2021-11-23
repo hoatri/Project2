@@ -26,6 +26,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Paint;
 
@@ -63,12 +64,29 @@ public class StatusController{
     private TableColumn<Status, String> tcStatusName;
 
     @FXML
+    void onEnterPressed(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER) {
+            save();
+        }
+    }
+    
+    public void resetListener(){
+        txtStatus.setText("1");
+        removeListenerStatus();
+        txtStatus.setText("");
+        addListenerStatus();
+    }
+    
+    @FXML
     void clear(ActionEvent event) {
+        resetListener();
         clearFields();
+        noti.setText("");
     }
 
     @FXML
     void createNew(ActionEvent event) {
+        resetListener();
         labelEditor.setText("New Status Details");
         noti.setText("");
         editStatus = null;
@@ -96,7 +114,7 @@ public class StatusController{
             } else {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("DELETE");
-                alert.setHeaderText("Are you sure you want to delete this status?");
+                alert.setHeaderText("Are you sure you want to delete "+ selectedStatus.getStatusName() +" status?");
                 Optional<ButtonType> confirmationResponse = alert.showAndWait();
                 if (confirmationResponse.get() == ButtonType.OK) {
                     boolean result = statusQuery.delete(selectedStatus);
@@ -159,15 +177,24 @@ public class StatusController{
         AdminSession.getInstance().clearAdminSession();
         Navigator.getInstance().gotoLogin();
     }
-
+    
+    private void addListenerStatus() {
+        txtStatus.textProperty().addListener(nameListener);
+    }
+    
+    private void removeListenerStatus() {
+        txtStatus.textProperty().removeListener(nameListener);
+    }
+    
     @FXML
     void refresh(ActionEvent event) {
+        resetListener();
         noti.setText("");
         refreshDataList();
     }
 
-    @FXML
-    void save(ActionEvent event) throws InterruptedException {
+    public void save(){
+        noti.setText("");
         txtStatus.textProperty().removeListener(nameListener);
         if (validate()) {
             Status extracted = extract();
@@ -203,6 +230,11 @@ public class StatusController{
         } else {
             txtStatus.textProperty().addListener(nameListener);
         }
+    }
+    
+    @FXML
+    void save(ActionEvent event) throws InterruptedException {
+        save();
     }
 
     @FXML
