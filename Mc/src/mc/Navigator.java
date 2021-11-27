@@ -15,7 +15,7 @@ public class Navigator {
     public static final String CATEGORY_FXML = "Categories.fxml";
     public static final String PRODUCT_FXML = "Products.fxml";
     public static final String PRODUCT_EDIT_FXML = "ProductEdit.fxml";
-    public static final String CUSTOMER_FXML = "Customers.fxml";
+    public static final String CUSTOMER_FXML = "Customer.fxml";
     public static final String ORDER_FXML = "Orders.fxml";
     public static final String ORDER_DETAIL_FXML = "OrderDetail.fxml";
     public static final String HOME_FXML = "Home.fxml";
@@ -56,7 +56,6 @@ public class Navigator {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         this.stage.setScene(scene);
-        this.stage.centerOnScreen();
     }
     
     public void gotoLogin() throws IOException {

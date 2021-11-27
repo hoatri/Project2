@@ -28,7 +28,7 @@ public class Mc extends Application {
         Navigator.getInstance().setStage(primaryStage);
         Navigator.getInstance().getStage().getIcons().add(new Image("Image/arches-logo_108x108.jpg"));
         Navigator.getInstance().getStage().setTitle("Mc");
-        Navigator.getInstance().gotoAdmin();
+        Navigator.getInstance().gotoLogin();
         Navigator.getInstance().getStage().show();
     }
 

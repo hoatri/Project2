@@ -367,7 +367,8 @@ public class AdminController {
     }
     
     public void initialize() throws SQLException {
-        admin.setText(AdminSession.getInstance().getEmail());
+        //admin.setText(AdminSession.getInstance().getName());
+        admin.setText(AdminSession.getInstance().getName());
         dataList = adminQuery.selectAll();
         tvAdmins.setItems(dataList);
         tcAdminName.setCellValueFactory((admin) -> {
